@@ -5,8 +5,6 @@ const info = JSON.parse(fs.readFileSync('./token.JSON'))
 const token = info.token
 const swears =  JSON.parse(fs.readFileSync('./swears.JSON'))
 
-console.log(swears["ass"])
-
 client.once('ready', () => {
 	console.log('Ready!')
 })
