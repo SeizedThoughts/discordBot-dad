@@ -11,6 +11,11 @@ client.once('ready', () => {
 
 client.on('message', msg => {
     var prefix = msg.content.split(' ', 2)[0].toLowerCase()
+    var cMessage = msg.content.replace(/\w+/g, part => (swears[part] === undefined ? part : swears[part]))
+
+    if(msg.content != cMessage){
+        msg.react('👊')
+    }
 
     if(prefix === "i'm" || prefix === "i’m" || prefix === "im"){
         var name = msg.content.slice(prefix.length + 1).toLowerCase()
