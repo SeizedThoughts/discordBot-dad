@@ -13,8 +13,24 @@ client.on('message', msg => {
     var prefix = msg.content.split(' ', 2)[0].toLowerCase()
     var cMessage = msg.content.replace(/\w+/g, part => (swears[part.toLowerCase()] === undefined ? part : swears[part.toLowerCase()]))
 
-    if(msg.content != cMessage){
+    console.log(msg.channel.messages)
+    for (var message in msg.channel.messages){
+        console.log(message)
+        if(message.pinned === true){
+            console.log(message.content)
+        }
+    }
+    client.pins
+
+    if(msg.content == ':dab:'){
         msg.react('👊')
+    }
+
+    if(msg.content != cMessage){
+        msg.react('🇩')
+            .then(() => msg.react('👊'))
+            .then(() => msg.react('🇳'))
+            .then(() => msg.react('🇹'))
     }
 
     if(prefix === "i'm" || prefix === "i’m" || prefix === "im"){
