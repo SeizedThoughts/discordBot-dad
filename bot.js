@@ -32,7 +32,7 @@ client.on('message', msg => {
     }
 
     if(msg.author.id != 571155567964454913 && (cMessage.toLowerCase().search(/\bi'm\b/g) != -1 || cMessage.toLowerCase().search(/\bi’m\b/g) != -1 || cMessage.toLowerCase().search(/\bim\b/g) != -1)){
-        var name = cMessage.slice(Math.max(cMessage.toLowerCase().search(/\bi'm\b/g), cMessage.toLowerCase().search(/\bi’m\b/g), cMessage.toLowerCase().search(/\bim\b/g)) + 3).replace(/^[a-z]|\s+[a-z]/g, c => ' ' + c.toUpperCase().trim()).trim();
+        var name = cMessage.slice(Math.max(cMessage.toLowerCase().search(/\bi'm\b/g), cMessage.toLowerCase().search(/\bi’m\b/g), cMessage.toLowerCase().search(/\bim\b/g)) + 3).trim().replace(/^[a-z]|\s+[a-z]/g, c => ' ' + c.toUpperCase().trim());
 
         msg.channel.send(`Hi${name}, I'm Dad.`);
     }
