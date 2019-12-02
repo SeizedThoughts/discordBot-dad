@@ -31,8 +31,8 @@ client.on('message', msg => {
             .then(() => msg.react('🇹'));
     }
 
-    if(msg.author.id != 571155567964454913 && (cMessage.toLowerCase().search(/i'm/g) != -1 || cMessage.toLowerCase().search(/i’m/g) != -1 || cMessage.toLowerCase().search(/im/g) != -1)){
-        var name = cMessage.slice(Math.max(cMessage.toLowerCase().search(/i'm/g), cMessage.toLowerCase().search(/i’m/g), cMessage.toLowerCase().search(/im/g)) + 3).replace(/^\w/, c => c.toUpperCase()).trim();
+    if(msg.author.id != 571155567964454913 && (cMessage.toLowerCase().search(/\bi'm\b/g) != -1 || cMessage.toLowerCase().search(/\bi’m\b/g) != -1 || cMessage.toLowerCase().search(/\bim\b/g) != -1)){
+        var name = cMessage.slice(Math.max(cMessage.toLowerCase().search(/\bi'm\b/g), cMessage.toLowerCase().search(/\bi’m\b/g), cMessage.toLowerCase().search(/\bim\b/g)) + 3).replace(/\s+[a-z]/g, c => ' ' + c.toUpperCase().trim()).trim();
 
         msg.channel.send(`Hi ${name}, I'm Dad.`);
     }
