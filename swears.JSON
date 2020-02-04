@@ -10,9 +10,11 @@
     "dick" : "peepee",
     "dicks" : "peepees",
     "fuck" : "heck",
+    "fucked" : "hecked",
     "fucking" : "hecking",
     "fucks" : "hecks",
     "hell" : "heck",
+    "hella" : "hecka",
     "lmao" : "laughing my butt off",
     "lmfao" : "laughing my hecking butt off",
     "mom" : "female dad",
@@ -33,8 +35,14 @@
     "pussies" : "front butts",
     "shit" : "poop",
     "shits" : "poops",
+    "shlt" : "poop",
+    "shlts" : "poops",
+    "shitty" : "poopy",
+    "shltty" : "poopy",
+    "stfu" : "shut the heck up",
     "urethra" : "pee hole",
     "urethras" : "pee holes",
     "vagina" : "front butt",
-    "vaginas" : "front butts"
+    "vaginas" : "front butts",
+    "wtf" : "what the heck"
 }

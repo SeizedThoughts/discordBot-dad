@@ -10,19 +10,21 @@ client.once('ready', () => {
 })
 
 client.on('message', msg => {
-    var prefix = msg.content.split(' ', 2)[0].toLowerCase()
     var cMessage = msg.content.replace(/\w+/g, part => (swears[part.toLowerCase()] === undefined ? part : swears[part.toLowerCase()]))
 
     if(msg.content != cMessage){
-        msg.react('👊')
+        msg.react('🇩')
+            .then(() => msg.react('👊'))
+            .then(() => msg.react('🇳'))
+            .then(() => msg.react('🇹'));
     }
 
-    if(prefix === "i'm" || prefix === "i’m" || prefix === "im"){
-        var name = msg.content.slice(prefix.length + 1)
-        var cName = name.replace(/\w+/g, part => (swears[part.toLowerCase()] === undefined ? part : swears[part.toLowerCase()])).replace(/\b[a-z]/g, char => char.toUpperCase())
-        msg.channel.send(`Hi ${cName}, I'm Dad.`)
+    if(!msg.author.bot && (cMessage.toLowerCase().search(/\bi'm\b/g) != -1 || cMessage.toLowerCase().search(/\bi’m\b/g) != -1 || cMessage.toLowerCase().search(/\bim\b/g) != -1)){
+        var name = cMessage.slice(Math.max(cMessage.toLowerCase().search(/\bi'm\b/g), cMessage.toLowerCase().search(/\bi’m\b/g), cMessage.toLowerCase().search(/\bim\b/g)) + 3).trim().replace(/^\w|\s+\w/g, c => ' ' + c.toUpperCase().trim());
+
+        msg.channel.send(`Hi${name}, I'm Dad.`);
     }
 
 });
 
-client.login(token)
+client.login(token);
