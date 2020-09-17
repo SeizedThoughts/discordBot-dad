@@ -1,16 +1,16 @@
-const fs = require('fs')
-const Discord = require('discord.js')
-const client = new Discord.Client()
-const info = JSON.parse(fs.readFileSync('./token.JSON'))
-const token = info.token
-const swears =  JSON.parse(fs.readFileSync('./swears.JSON'))
+const fs = require('fs');
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const info = JSON.parse(fs.readFileSync('./token.JSON'));
+const token = info.token;
+const swears =  JSON.parse(fs.readFileSync('./swears.JSON'));
 
 client.once('ready', () => {
-	console.log('Ready!')
+	console.log('Ready!');
 })
 
 client.on('message', msg => {
-    var cMessage = msg.content.replace(/\w+/g, part => (swears[part.toLowerCase()] === undefined ? part : swears[part.toLowerCase()]))
+    var cMessage = msg.content.replace(/\w+/g, part => (swears[part.toLowerCase()] === undefined ? part : swears[part.toLowerCase()]));
 
     if(msg.content != cMessage){
         msg.react('🇩')
